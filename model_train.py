@@ -70,6 +70,31 @@ print(classification_report(y_test, predict_svm))
 print("CONFUSION MATRIX")
 print(confusion_matrix(y_test, predict_svm))
 
+# Decision Tree
+print("Decision Tree")
+from sklearn.tree import DecisionTreeClassifier
+dt_model = DecisionTreeClassifier()
+dt_model.fit(X_train, y_train)
+predict_dt = dt_model.predict(X_test)
+dt_acc = accuracy_score(y_test, predict_dt) * 100
+print(dt_acc)
+print("CLASSIFICATION REPORT")
+print(classification_report(y_test, predict_dt))
+print("CONFUSION MATRIX")
+print(confusion_matrix(y_test, predict_dt))
+
+# Random Forest
+print("Random Forest")
+from sklearn.ensemble import RandomForestClassifier
+rf_model = RandomForestClassifier()
+rf_model.fit(X_train, y_train)
+predict_rf = rf_model.predict(X_test)
+rf_acc = accuracy_score(y_test, predict_rf) * 100
+print(rf_acc)
+print("CLASSIFICATION REPORT")
+print(classification_report(y_test, predict_rf))
+print("CONFUSION MATRIX")
+print(confusion_matrix(y_test, predict_rf))
 
 
 
