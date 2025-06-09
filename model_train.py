@@ -101,3 +101,13 @@ print(confusion_matrix(y_test, predict_rf))
 Labeled_Data = 'Labeled_Data.csv'
 df.to_csv(Labeled_Data, index=False)
 df.to_markdown
+# Accuracy comparison plot
+models = ['Naive Bayes', 'SVM', 'Decision Tree', 'Random Forest']
+accuracies = [naivebayes, svm_acc, dt_acc, rf_acc]
+
+plt.figure(figsize=(8, 5))
+sns.barplot(x=models, y=accuracies)
+plt.title("Model Accuracy Comparison")
+plt.ylabel("Accuracy (%)")
+plt.ylim(0, 100)
+plt.show()
